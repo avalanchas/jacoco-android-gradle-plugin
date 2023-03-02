@@ -2,17 +2,17 @@ package com.dicedmelon.gradle.jacoco.android
 
 public class ReportConfiguration {
 
-  private boolean enabled
+  private boolean required
 
-  ReportConfiguration(boolean enabled) {
-    this.enabled = enabled
+  ReportConfiguration(boolean required) {
+    this.required = required
   }
 
-  public boolean isEnabled() {
-    enabled
+  public boolean isRequired() {
+    required
   }
 
-  public void enabled(boolean enabled) {
-    this.enabled = enabled
+  public void required(boolean required) {
+    this.required = required
   }
 }
