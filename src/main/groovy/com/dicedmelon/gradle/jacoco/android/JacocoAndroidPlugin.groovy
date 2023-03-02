@@ -84,22 +84,6 @@ class JacocoAndroidPlugin implements Plugin<ProjectInternal> {
     }
     reportTask.reports {
       def destination = project.jacocoAndroidUnitTestReport.destination
-      
-      csv.required project.jacocoAndroidUnitTestReport.csv.required
-      html.required project.jacocoAndroidUnitTestReport.html.required
-      xml.required project.jacocoAndroidUnitTestReport.xml.required
-
-      if (csv.required) {
-        csv.destination new File((destination == null) ? "${project.buildDir}/jacoco/jacoco.csv" : "${destination.trim()}/jacoco.csv")
-      }
-      
-      if (html.required) {
-        html.destination new File((destination == null) ? "${project.buildDir}/jacoco/jacocoHtml" : "${destination.trim()}/jacocoHtml")
-      }
-
-      if (xml.required) {
-        xml.destination new File((destination == null) ? "${project.buildDir}/jacoco/jacoco.xml" : "${destination.trim()}/jacoco.xml")
-      }
     }
     reportTask
   }
